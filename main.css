@@ -3,6 +3,9 @@
     --color-2: #FFD95A;
     --color-3: #C07F00;
     --color-4: #4C3D3D;
+    
+    --color-remove-1: #B70404;
+    --color-remove-2: #7c0202;
 
     --box-shadow-1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -53,10 +56,55 @@ main {
 
 }
 
-main > div {
+main > .card {
     border: 5px var(--color-1) solid;
     border-radius: 10px;
     color: var(--color-1);
+    padding: 1rem;
+    font-size: 1.2rem;
+    box-shadow: var(--box-shadow-1);
+}
+
+.card h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.card > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.card > .status {
+    margin-top: 2rem;
+
+}
+
+.card button {
+    flex: auto;
+    padding: 0.5rem;
+    border: 2px var(--color-2) solid;
+    border-radius: 5px;
+    background-color: var(--color-1);
+    color: var(--color-4);
+    box-shadow: var(--box-shadow-1);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.status > .remove {
+    background-color: var(--color-remove-2);
+    color: var(--color-1);
+}
+
+.status > .remove:hover {
+    background-color: var(--color-remove-1);
 }
 
 footer {
