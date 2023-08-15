@@ -92,8 +92,24 @@ reset();
 display();
 
 const newbook = document.querySelectorAll("button.newBook");
+const overlay = document.querySelector("div.overlay");
+const modal = document.querySelector("div.modal")
+
 newbook.forEach(element => {
     element.addEventListener("click", () => {
-
+        modal.classList.add("active");
+        overlay.classList.add("active");
     });
+});
+
+overlay.addEventListener("click", () => {
+    modal.classList.remove("active");
+    overlay.classList.remove("active");
+});
+
+document.addEventListener("keydown", element => {
+    if(element.code === "Escape"){
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+    };
 });
