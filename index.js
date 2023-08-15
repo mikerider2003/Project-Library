@@ -3,18 +3,26 @@ const myLibrary = [
     {title: 'Different book', author: 'Different author', pages: 1234, read: 'not read yet'}
 ];
 
-function Book() {
-  // the constructor...
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 }
 
 function addBookToLibrary() {
   // do stuff here
 }
 
-function disiplay(){
+function reset(){
     const main = document.querySelector("main")
 
-    console.log(main)
+    const reset = main.querySelectorAll("div.card");
+    reset.forEach(element=>element.remove())
+};
+
+function display(){
+    const main = document.querySelector("main")
 
     myLibrary.forEach(element => {
 
@@ -50,9 +58,9 @@ function disiplay(){
         const h2Pages = document.createElement('h2');
         const h2PagesData = document.createElement('h2');
 
-        h2Author.textContent = "Author";
+        h2Author.textContent = "Author:";
         h2AuthorData.textContent = element.author;
-        h2Pages.textContent = "Author";
+        h2Pages.textContent = "Pages:";
         h2PagesData.textContent = element.pages;
 
         content[1].appendChild(h2Author)
@@ -76,10 +84,16 @@ function disiplay(){
         remove.classList.add("remove");
         remove.textContent = "remove";
         status.appendChild(remove);
-
     });
     return 1;
 };
 
-disiplay();
+reset();
+display();
 
+const newbook = document.querySelectorAll("button.newBook");
+newbook.forEach(element => {
+    element.addEventListener("click", () => {
+
+    });
+});

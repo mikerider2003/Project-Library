@@ -11,10 +11,10 @@
 <body>
     <nav>
         <h1>Library</h1>
-        <button>New book</button>
+        <button class="newBook">New book</button>
     </nav>
     <main>
-        <div class="card">
+        <!-- <div class="card">
             <div>
                 <h1>Title:</h1><h1>The hobit</h1>
             </div>
@@ -28,10 +28,24 @@
                 <button class="read">Read</button>
                 <button class="remove">Remove</button>
             </div>
-        </div>
+        </div> -->
     </main>
     <footer>
-        <button>+</button>
+        <button class="newBook">+</button>
     </footer>
+    <div class="overlay "></div>
+    <div class="modal ">
+        <form action="" class="add-book">
+            <h1>Add new book</h1>
+            <input type="text" placeholder="Title" required>
+            <input type="text" placeholder="Author" required>
+            <input type="number" name="" id="" placeholder="Number of pages" required>
+            <div>
+                <label for="read-submit">Have you read it?</label>
+                <input type="checkbox" name="" id="read-submit" required>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+    </div>
 </body>
 </html>

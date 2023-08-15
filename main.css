@@ -3,9 +3,12 @@
     --color-2: #FFD95A;
     --color-3: #C07F00;
     --color-4: #4C3D3D;
+    --color-5: white;
     
     --color-remove-1: #B70404;
     --color-remove-2: #7c0202;
+
+    --color-overlay: #fff7d450;
 
     --box-shadow-1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -133,4 +136,89 @@ footer button {
     footer button {
         display: block;
     } 
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-overlay);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    border: 5px var(--color-1) solid;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
+.add-book {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-book > h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.add-book > input {
+    margin: .5rem 0;
+    font-size: 1rem;
+    height: 2rem;
+    border: 2px var(--color-1) solid;
+    border-radius: 5px;
+    background-color: var(--color-5);
+}
+
+.add-book > input:focus {
+    outline: 3px var(--color-3) solid;
+}
+
+.add-book > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+}
+
+.add-book input[type=checkbox]{
+    width: 30px;
+    aspect-ratio: 1;
+    accent-color: var(--color-3);
+}
+
+.add-book input[type=checkbox]:checked {
+    background-color: var(--color-4);
+}
+
+.add-book > button {
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: .5rem;
+    border: 2px var(--color-2) solid;
+    border-radius: 5px;
+    background-color: var(--color-1);
+    color: var(--color-4);
+}
+
+.add-book > button:hover {
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
+.active {
+    display: block
 }
