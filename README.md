@@ -11,6 +11,7 @@ This project is a library that allows you to add books to a list and mark them a
 
 ## Final Result
 ### Desktop
-![Desktop](./Result-desktop.png)
+<img src="./Result-desktop.png"/>
+
 ### Mobile
-![Mobile](./Result-mobile.png)
+<img src="./Result-mobile.png" width="390"/>
