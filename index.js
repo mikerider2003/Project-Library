@@ -14,7 +14,7 @@ function addBookToLibrary() {
     const newbook = document.querySelectorAll("button.newBook");
     const overlay = document.querySelector("div.overlay");
     const modal = document.querySelector("div.modal")
-    
+
     newbook.forEach(element => {
         element.addEventListener("click", () => {
             modal.classList.add("active");
@@ -33,6 +33,37 @@ function addBookToLibrary() {
             overlay.classList.remove("active");
         };
     });
+
+    // Submit button
+    const submit = document.getElementById('submit')
+    
+    submit.addEventListener("click", (event) =>{
+        event.preventDefault()
+        
+        const title = document.getElementById("title")
+        const author = document.getElementById("author")
+        const pages = document.getElementById("pages")
+        const checkbox = document.getElementById("check-box")
+
+        if(checkbox.checked == true){
+            var isRead = "read"
+        } else {
+            var isRead = "not read yet"
+        }
+        
+        myLibrary.push(new Book(title.value, author.value, pages.value, isRead))
+
+        title.value = ""
+        author.value = ""
+        pages.value = ""
+        checkbox.checked = false
+
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+
+        reset();
+        display();
+    })
 };
 
 function reset(){
@@ -45,7 +76,7 @@ function reset(){
 function display(){
     const main = document.querySelector("main")
 
-    myLibrary.forEach(element => {
+    myLibrary.forEach((element, index) => {
 
         // Creates card
         const card = document.createElement("div");
@@ -70,7 +101,7 @@ function display(){
         h1Data.textContent = element.title;
         
         content[0].appendChild(h1Label);
-        content[0].appendChild(h1Data)
+        content[0].appendChild(h1Data);
 
 
         // h2
@@ -94,22 +125,51 @@ function display(){
         const status = content[3];
         status.classList.add("status")
         
+
         // Create read button
         const read = document.createElement("button");
         read.classList.add("read");
         read.textContent = "read";
+        
+        // Bind button for changing the read status
+        read.addEventListener("click", ()=>{
+            if(element.read == "read"){
+                element.read = "not read yet"
+            } else {
+                element.read = "read"
+            }
+            reset()
+            display()
+        })
+
+        // Change button color
+        if(element.read == "read"){
+            read.classList.add("green")
+        } else {
+            read.classList.add("red")
+        }
+
         status.appendChild(read);
         
+
         // Create remove button
         const remove = document.createElement("button");
         remove.classList.add("remove");
         remove.textContent = "remove";
+
+        remove.addEventListener("click", ()=>{
+            myLibrary.splice(index, 1)
+            
+            reset()
+            display()
+        })
+
         status.appendChild(remove);
     });
     return 1;
 };
 
-console.log(new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet"))
+// console.log(new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet"))
 
 reset();
 display();

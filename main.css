@@ -8,6 +8,9 @@
     --color-remove-1: #B70404;
     --color-remove-2: #7c0202;
 
+    --color-read-red: #DF2E38;
+    --color-read-green: #5D9C59;
+
     --color-overlay: #fff7d450;
 
     --box-shadow-1: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -99,6 +102,16 @@ main > .card {
     box-shadow: var(--box-shadow-1);
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.status > .green {
+    background-color: var(--color-read-green);
+    color: var(--color-1);
+}
+
+.status > .red {
+    background-color: var(--color-read-red);
+    color: var(--color-1);
 }
 
 .status > .remove {

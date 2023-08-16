@@ -37,14 +37,14 @@
     <div class="modal ">
         <form class="add-book">
             <h1>Add new book</h1>
-            <input type="text" placeholder="Title" required>
-            <input type="text" placeholder="Author" required>
-            <input type="number" name="" id="" placeholder="Number of pages" required>
+            <input type="text" placeholder="Title" id="title" autocomplete="off">
+            <input type="text" placeholder="Author" id="author" autocomplete="off">
+            <input type="number" name="" placeholder="Number of pages" id="pages" autocomplete="off">
             <div>
                 <label for="read-submit">Have you read it?</label>
-                <input type="checkbox" name="" id="read-submit">
+                <input type="checkbox" name="" id="check-box">
             </div>
-            <button type="submit">submit</button>
+            <button type="submit" id="submit">submit</button>
         </form>
     </div>
 </body>
