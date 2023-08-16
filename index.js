@@ -1,6 +1,6 @@
 const myLibrary = [
     {title: 'The Hobbit', author: 'J.R.R. Tolkien', pages: 295, read: 'not read yet'},
-    {title: 'Different book', author: 'Different author', pages: 1234, read: 'not read yet'}
+    {title: 'A Song of Ice and Fire', author: 'George R. R. Martin', pages: 4224, read: 'not read yet'}
 ];
 
 function Book(title, author, pages, read) {
