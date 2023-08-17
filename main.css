@@ -69,15 +69,20 @@ main > .card {
     padding: 1rem;
     font-size: 1.2rem;
     box-shadow: var(--box-shadow-1);
+    white-space: nowrap;
 }
 
 .card h1 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    overflow: auto;
+    max-width: 80%;
 }
 
 .card h2 {
     margin-bottom: 0.5rem;
+    overflow: auto;
+    max-width: 80%;
 }
 
 .card > div {
